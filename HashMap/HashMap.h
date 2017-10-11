@@ -2,7 +2,8 @@
 #define HASHMAP_H
 
 #include "HashEntry.h"
-
+#include <iostream>
+using namespace std;
 template<class K, class T>
 class HashMap {
 private:
@@ -29,6 +30,8 @@ public:
     ~HashMap();
 
     bool esVacio();
+
+   // void print();
 
 };
 
@@ -92,5 +95,13 @@ HashMap<K, T>::HashMap(unsigned int tamanio, unsigned int (*fp)(K)) {
         tabla[i] = NULL;
 }
 
+/*template<class K, class T>
+void HashMap<K, T>::print() {
+    for (int i = 0; i < tamanio; i++)
+        if (tabla[i] != NULL)
+            cout << tabla[i]->getDato() << endl;
+        else
+            cout << "NULL" << endl;
+}*/
 
 #endif //HASHMAP_H
